@@ -8,8 +8,7 @@ COPY . .
 ENV DEBIAN_FRONTEND=noninteractive
 ENV SUPERVISOR_PHP_USER="www-data"
 
-RUN cp .env.example .env \
-    && composer install \
+RUN composer install \
     && touch database/database.sqlite \
     && php artisan migrate --seed \
     && npm install \
