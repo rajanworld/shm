@@ -17,6 +17,6 @@ RUN cp .env.example .env \
     && npm run build \
     && find . -path './vendor' -prune -o -path './node_modules' -prune -o -exec chown www-data:www-data {} +
 
-EXPOSE 8080/tcp
+EXPOSE 80/tcp
 
 ENTRYPOINT ["start-container"]
